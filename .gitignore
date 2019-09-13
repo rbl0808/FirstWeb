@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+*.jar
+#.idea/**/workspace.xml
+#.idea/**/uiDesigner.xml
+#.idea/**/libraries
+/.idea
+*.iml
+out
+gen
