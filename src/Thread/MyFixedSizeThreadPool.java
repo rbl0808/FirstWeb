@@ -16,23 +16,18 @@ import java.util.concurrent.LinkedBlockingDeque;
 public class MyFixedSizeThreadPool {
     //仓库
     private BlockingQueue<Runnable> taskQueue;
-
     //放线程的集合
     private List<Worker> workers;
-
     private volatile boolean working = true;
 
     public MyFixedSizeThreadPool(int poolsize, int taskQueueSize) {
         if (poolsize <= 0 || taskQueueSize <= 0) {
             throw new IllegalArgumentException("参数错误");
         }
-
         //初始化任务队列
         this.taskQueue = new LinkedBlockingDeque<>(taskQueueSize);
-
         //创建放线程的集合
         this.workers = Collections.synchronizedList(new LinkedList<>());
-
         //创建线程
         for (int i = 0; i < poolsize; i++) {
             Worker w = new Worker(this);
@@ -48,7 +43,6 @@ public class MyFixedSizeThreadPool {
     public void shutdown() {
         if (this.working) {
             this.working = false;
-
             for (Thread t : this.workers) {
                 if (t.getState().equals(Thread.State.BLOCKED) || t.getState().equals(Thread.State.WAITING)) {
                     t.interrupt();
@@ -91,7 +85,6 @@ public class MyFixedSizeThreadPool {
                 }
 
             }
-
         }
     }
 }

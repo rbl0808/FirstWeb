@@ -149,7 +149,7 @@ public class NIOServer {
                 try {
                     //将字节转为字符，返回接收到的字符串
                     return decoder.decode(bigBf).toString();
-                }catch (CharacterCodingException e){
+                } catch (CharacterCodingException e) {
                     e.printStackTrace();
                 }
             }
