@@ -1,5 +1,5 @@
 package ZXD_2018_4_1;
-//双重校验锁
+//双重校验锁  不推荐
 public class Singleton4 {
     private Singleton4(){}
     private static Singleton4 instance = null;

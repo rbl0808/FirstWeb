@@ -24,7 +24,6 @@ public class CountDownLatchTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        lock = new ReentrantLock();
         latch = new CountDownLatch(latchSize);
 
         int avg = n / latchSize;
@@ -57,14 +56,10 @@ public class CountDownLatchTest {
             for (int i = left; i <= right; i++) {
                 res += i;
             }
-            lock.lock(); // static sum 并发相加 加锁
-            try {
                 sum += res;
                 System.out.println(Thread.currentThread().getName() + "--> left:" + left + ", right:" + right + ", res:" + res + ", sum: " + sum);
                 latch.countDown(); // 完成一个 减去一个
-            } finally {
-                lock.unlock();
-            }
+
         }
     }
 }
