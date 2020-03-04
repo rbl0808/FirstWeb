@@ -6,7 +6,6 @@
 package Thread;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 多线程计算  1+2+3+4+5+......+n 的值
