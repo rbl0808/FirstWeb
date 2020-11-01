@@ -90,7 +90,6 @@ public class ReverseListRbl {
      * 递归反转法，从尾结点开始，逆向反转各个结点的指针域指向。
      */
     public static Node Reverse1(Node head) {
-        // head看作是前一结点，head.getNext()是当前结点，reHead是反转后新链表的头结点
         if (head == null || head.getNext() == null) {
             return head;// 若为空链或者当前结点在尾结点，则直接还回
         }
