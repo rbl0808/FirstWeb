@@ -21,8 +21,5 @@ public class BaseByteLength {
         char c = '方';
         System.out.println(c);
         Date date = new Date();
-
-
-
     }
 }
