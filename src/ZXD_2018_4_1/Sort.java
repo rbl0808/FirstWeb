@@ -140,13 +140,14 @@ public class Sort {
      * 4.堆排序 时间复杂度O(nlogn)  不稳定
      */
     void heapSort(int[] arr) {
-        for (int i = arr.length / 2 - 1; i >= 0; i--) //buildHeap
+        for (int i = arr.length / 2 - 1; i >= 0; i--) {
+            //buildHeap
             perDown(arr, i, arr.length);
+        }
         for (int i = arr.length - 1; i > 0; i--) {   //deleteMax
             swapReferences(arr, 0, i);
             perDown(arr, 0, i);
         }
-
     }
 
     //移除堆顶元素
@@ -163,11 +164,12 @@ public class Sort {
         int tmp;
         for (tmp = arr[i]; leftChild(i) < n; i = child) {
             child = leftChild(i);
-            if (child != n - 1 && arr[child] < arr[child + 1])
+            if (child != n - 1 && arr[child] < arr[child + 1]) {
                 child++;
-            if (tmp < arr[child])
+            }
+            if (tmp < arr[child]) {
                 arr[i] = arr[child];
-            else break;
+            } else break;
         }
         arr[i] = tmp;
     }

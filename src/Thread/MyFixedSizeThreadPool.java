@@ -5,7 +5,6 @@
  **/
 package Thread;
 
-import sun.tools.jconsole.Worker;
 
 import java.util.Collections;
 import java.util.LinkedList;

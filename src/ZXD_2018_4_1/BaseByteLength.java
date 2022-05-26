@@ -15,9 +15,7 @@ public class BaseByteLength {
 
     }
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        BaseByteLength basesize= new BaseByteLength();
-        BaseByteLength.baseSize();
+        baseSize();
         char c = '方';
         System.out.println(c);
         Date date = new Date();
